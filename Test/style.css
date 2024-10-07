@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+}
+
+.parnt{
+  /*background-color: #eee;*/
+  width: 100px;
+  height: 100px;
+  padding: 50px;
+  margin: 50px;
+  background-image: url(/FB_IMG_1727879801275.jpg);
+
+  background-size: cover;
+  background-position: top right;
+
+
+  border: 5px red solid;
+  border-bottom: 5px solid greenyellow;
+  border-radius: 8px;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+
+  color: blue;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.parnt p,
+p {
+  background: red;
+  color: #D32929;
+  background: rgba(red, green, blue, 0.5);
+  font-size: 1vw;
+}
+
+p {
+  padding: 15px;
+  font-weight: 30px;
+  font-weight: bold;
+  /*font-style: ita#7F365Clic;*/
+  font-family: serif;
+  color: #fff;
+
+  text-align: center;
+  text-indent: 300px;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  word-break: 20px;
+  word-spacing: 12px;
+  opacity: 0.5;
+
+  box-shadow: 2px 2px 2px 2px #000 inset,
+    5px 5px 3px 3px red;
+}
+
+p::first-letter {
+  font-size: 30px;
+  color: blue;
+}
+
+body {
+  height: 5000px;
+  position: relative;
+}
+
+.but {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  width: 35px;
+  height: 50px;
+  background: #4FEEB3;
+
+}
+
+.navbar {
+  width: fit-content;
+  height: 20px;
+  background: #4FEEB3;
+  position: sticky;
+  top: 10px;
+
+}
+
+summary{
+  background: #C2C3CF;
+  width: 50%;
+ counter-increment: count;
+ margin: 10px auto;
+ padding: 15px;
+ position: relative;
+}
+
+/*summary::after{
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background: red;
+  top: 0;
+  right: 0;
+}
+*/
+
+
+/*summary::after{
+  content: "";
+  position: absolute;
+  border: 15px solid red;
+  border-color: transparent transparent transparent red;
+  top: 50%;
+  right: -5px;
+}*/
+
+summary::after {
+  content: counter(count);
+  position: absolute;
+  width: 15px;
+  height: 100%;
+  background: red;
+  top: 0px;
+  left: 0px;
+  color: white;
+  text-align: center:;
+}
+ 
