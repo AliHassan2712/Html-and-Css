@@ -105,3 +105,171 @@ console.log(name.startwith('m',15))
 console.log(name.endWith('m',15))
 */
 
+
+
+/*********************Control Flow*********/
+/*if (true) {
+
+}
+
+if (true) {
+
+} else {
+
+}
+
+if (true) {
+  if (true) {
+
+  }
+}
+
+theage=60;
+let result = theage <= 20 ? console.log('20') : theage > 20 && theage > 60 ? console.log('40') : theage >=  60 ? console.log('80') : console.log('unkwon');
+console.log(result)
+
+
+switch (expression) {
+  case 'case':
+    // Tab to edit
+    break;
+  
+  default:
+    // Tab to edit
+}
+*/
+
+
+
+/***************Arrays********************/
+/*
+//let myFrinds=new Array()
+let myFrinds=['Ali','Hassan','Amer','safiya',23,55,['name','age'],'Ali']
+
+myFrinds[5]=''
+
+for (var i = 0; i < myFrinds.length; i++) {
+  console.log(myFrinds[i])
+}
+
+console.log(Array.isArray(myFrinds))
+myFrinds[8]='Ahmed'
+console.log(myFrinds.length)
+
+
+//push
+//pop
+//shift
+//unshift
+//Sort
+// revers
+
+
+console.log(myFrinds.indexOf('Ali'))
+console.log(myFrinds.indexOf('Mohammed'))
+console.log(myFrinds.lastIndexOf('Ali'))
+console.log(myFrinds.includes('Mohammed'))
+
+console.log(myFrinds.slice(1,-1))
+console.log(myFrinds.splice(2,2,'Amany','Samar'))
+console.log(myFrinds)
+
+//concat
+console.log(myFrinds.join('#'))
+*/
+
+
+
+/***************Loop ******************/
+/*for (var i = 0; i < list.length; i++) {
+  // Tab to edit
+}
+for (var prop in object) {
+  // Tab to edit
+}
+
+while (condition) {
+  // Tab to edit
+}
+
+dowhile()
+
+//breake  
+// countinue
+// label idntifire بتحكم في اللوب الاساسي باستخدام اللوب الفرعي 
+//mainLoop:
+//nestedLoop : 
+//breake mainLoop
+*/
+
+
+/***************Loop Challange************/
+/*
+let Admins = ['Ahmed', 'Osama', 'Sayad', 'Ali', 'Stop'];
+
+let Emp = ['Amjed', 'Samah', 'Amer', 'Omer', 'Othman', 'Amany', 'Samia', 'AliHassan', 'AmerHassan']
+
+let m = 1;
+
+for (let i = 0; i < Admins.length; i++) {
+  if (Admins[i] == 'Stop') {
+    m = i;
+    break
+  }
+}
+document.write(`<h3>
+  We Have ${m} Admins
+</h3>`)
+
+
+
+for (let i = 0; i < Admins.length; i++) {
+  if (Admins[i] == 'Stop') {
+    break
+  }
+  document.write(
+    `<div>The team member of ${Admins[i]} is </div>`)
+  document.write(`<h3>
+     Team Member :
+   </h3>`)
+  for (let j = 0; j < Emp.length; j++) {
+
+    if (Admins[i][0] == 'A' && Emp[j][0] == 'A') {
+      document.write(
+        `<div>- ${Emp[j]}</div>`)
+    }
+
+
+
+
+    if (Admins[i][0] == 'O' && Emp[j][0] == 'O') {
+
+      document.write(
+        `<div>-  ${Emp[j]}</div>`)
+
+    }
+
+
+
+    if (Admins[i][0] == 'S' && Emp[j][0] == 'S') {
+
+      document.write(
+        `<div>- ${Emp[j]}</div>`)
+    }
+  }
+  document.write('-'.repeat(70))
+
+}
+*/
+
+
+/***************Function Challange*********/
+
+let max = 'A13BS2ZX';
+let sm = max.split('').filter(function(ele) {
+//  return !isNaN(parseInt(ele))
+return ele % ele == 0
+}).map(function(ele) {
+  return ele * ele
+}).join('')
+console.log(sm)
