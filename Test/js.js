@@ -263,13 +263,146 @@ for (let i = 0; i < Admins.length; i++) {
 */
 
 
-/***************Function Challange*********/
+/***************Function******************/
+//function fname(param) {
+// Tab to edit
+
+// return      اخر جملة في الفانكشن توقف الفانكشن
+//}  user defined
+//fname(aeg)
+//console.log    built in
+
+
+//defult Value
+/*function fname(name='test') {
+  console.log(name)
+}
+fname()
+*/
+
+
+
+//Rest Para
+/*function calc(name,...nums){
+  let re=0;
+  for (var i = 0; i < nums.length; i++) {
+    re+=nums[i];
+  }
+  return ` ${name}${re}`;
+}
+
+console.log(calc('Ali',1,2,3,4))
+*/
+
+
+// Nested Functio
+/*
+function fname(fname) {
+  console.log('fname is ',fname)
+  
+  function Lname(lname) {
+   console.log('lname is ',lname)
+  }
+  Lname('Hassan')
+}
+
+fname('Ali')
+*/
+
+
+//Anunmous Functions 
+/*function (param) {
+  // بدون اسم  (onclick)
+}
+
+()=>  //Arrow Functions 
+*/
+
+
+// Scope 'Local and Globale'
+/*
+ع سبيل المثال الفانكشن تقرا من كل الولكل في الاول وبعدها بتشوف الجلوبال 
+اذا موجود في اللوكل بس معرف بعد هيطلع ايرور انو معرف بعد ولا اعرفه قبل 
+اذا مش معرف هيقرا من الجلوبال
+*/
+
+/*
+Var 
+اذا عدل في اللوكال هيعدل في الجلوبال 
+Let 
+مش راح يعدل في الجلوبال
+*/
+
+
+
+
+
+
+//Higher Order Function 
+// فانكاش بتاخذ فانكشان ك para
+/*
+
+// 1- MaP
+myNums = [10, 20, 30, 40, 50]
+
+let addSelf = myNums.map(function(ele, index, arr) {
+  return ele + ele
+})
+console.log(addSelf) //New Array
+console.log(myNums) // inital Array
+
+
+let swap = 'elZERo';
+let sw = swap.split('').map(function(ele) {
+  return ele === ele.toLowerCase() ? ele.toUpperCase() : ele.toLowerCase()
+}).join('')
+
+console.log(sw)
+
+
+
+// 2- FiLlTR    تفحص حسب الشرط واذا صح بيعدي في Array جديدة
+
+let myNumbers = [11, 20, 15, 30, 33, 826]
+let modnum = myNumbers.map(function(ele) {
+  return ele % 2 === 0 ? ele : ""
+})
+console.log(modnum)
+
 
 let max = 'A13BS2ZX';
 let sm = max.split('').filter(function(ele) {
-//  return !isNaN(parseInt(ele))
-return ele % ele == 0
+  //  return !isNaN(parseInt(ele))
+  return ele % ele == 0
 }).map(function(ele) {
   return ele * ele
 }).join('')
 console.log(sm)
+
+
+// 3-Redues      Single Value
+let number = [10, 20, 30, 40];
+let addNums = number.reduce(function(acc, cur) {
+  return acc + cur
+}, 100);
+console.log(addNums)
+
+
+let removeCh = ['E', '@', 'L', 'Z', '@', 'R', '@', 'O']
+
+let final = removeCh.filter(function(ele) {
+  return !ele.startsWith('@')
+
+
+  // use redues not Join //
+}).reduce(function(acc, cur) {
+  return ` ${acc}${cur}`
+})
+console.log(final)
+
+// 4- ForEach  هنستخدمها كثير في dom
+// return   undifined
+// مع ul li  duv 
+*/
+
+
