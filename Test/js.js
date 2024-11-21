@@ -406,3 +406,192 @@ console.log(final)
 */
 
 
+
+
+/*****************Object******************/
+/*
+//1- Create Obj
+let user = {
+  // prop
+  name: 'ali',
+  age: 23,
+  sayhello: function() {
+    console.log(`hello ${user.name}`)
+  }
+}
+
+
+//nested Object
+user.addres = { // اضافة 
+  ksa: 'AlRiahd',
+  pal: {
+    gaza: 'Gaza',
+    'west bank': 'West Bank',
+  }
+}
+console.log(user.name)
+console.log(user.sayhello())
+console.log(user.addres.ksa)
+console.log(user.addres.pal['gaza']) //Dot Notion
+console.log(user['addres']['pal']['gaza']) //Notaion
+console.log(user['addres']['pal']['west bank']) //Notaion  
+// مستحيل اصل ل west bank بدون ما استخدم ل breaket Notaion
+
+
+//2 - Creatr Obj use Keyword New
+let user1 = new Object({
+  name: 'Ahmed',
+})
+user1.age = 22;
+console.log(user1.age)
+console.log(user1.name)
+
+
+
+//3 - Create Obj use Create Method && This KeyWord 
+
+let obj1 = {
+  age: 20,
+  doubleAge: function() {
+    //return obj1.age *2;  // Without use this just to obj1
+    return this.age * 2; //for any object
+  },
+}
+
+let copyObj = Object.create(obj1)
+copyObj.age = 50
+console.log(copyObj.doubleAge())
+
+
+//4 - Create Object use Assgin Method
+let object1 = {
+  prop1: 10,
+  prop2: 20,
+  meth1: function(param) {
+    return this.prop1;
+  },
+}
+
+let object2 = {
+  prop3: 3,
+  meth3: function(param) {
+    return this.prop3;
+  },
+}
+
+let targetObj = {
+  prop1: 100,
+  prop2: 200,
+}
+
+
+// (Target Obj , obj ,obj ....)
+// اذا لقى بروبرتي نفس الاسم بياخذ الاولى 
+let finalObj = Object.assign(targetObj, object1, object2)
+finalObj.testprop = 'test'  // اضافة وتحديث 
+console.log(finalObj)
+*/
+
+/*******************************************/
+/********* Problem Solving in JS ***********/
+
+/******* Sum Num to 100 **********/
+/*let result = 0
+for (var i = 0; i <=100; i++) {
+   result += i
+}
+console.log(result)
+*/
+/******* Factorial 4 **********/
+/*
+function fact(num) {
+  if (num == 1 || num == 0) {
+    return 1
+  } else {
+    return num * fact(num - 1)
+  }
+}
+console.log(fact(10))
+
+
+var number = 1
+for (var i = 1; i <= 10; i++) {
+  number *= i;
+}
+console.log(number)
+
+
+function factorial(num) {
+  let numb = 1
+  for (var i = 1; i <= num; i++) {
+   numb *= i;
+  }
+  return numb
+}
+console.log(factorial(4))
+*/
+
+
+/*******  Calc Num Of Array**********/
+/*
+let arr =[2,3,-1,5,7,9,10,15,95]
+let sumArr = arr.reduce(function(acc,cur) {
+  return acc + cur
+})
+console.log(sumArr)
+*/
+
+/******* Positive Number in Array*********/
+/*
+let positveArr =[]
+let arr = [10,-10,20,30,-55,-62,-22,100,-20]
+function postiveNum(arr) {
+  for (var i = 0; i < arr.length; i++) {
+   if (arr[i] >  0) {
+     positveArr.push(arr[i])
+   }
+  }
+  return positveArr
+}
+console.log(postiveNum(arr))
+
+let pos= arr.filter(function(ele) {
+  let posNum =[]
+  
+   return ele > 0 ?  posNum.push(ele) : ''
+  
+})
+
+console.log(pos)
+*/
+
+
+/******* Max Number in Array*********/
+
+//let arr = [10, -10, 20, 30, -55, 536, -62, -22, 100, -20]
+
+/*let maxNum = arr.reduce((acc,cur)=>{
+  return acc > cur ? acc : cur
+} )
+
+console.log(maxNum)
+*/
+
+/*function maxNum(arr) {
+  let max = arr[0]
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i]
+    }
+  }
+  return max
+}
+console.log(maxNum(arr))
+*/
+
+
+
+
+
+
+/*******تم بحمد الله الانتهاء من اساسيات الجافا سكريبت ....نكمل في المتقدم */
