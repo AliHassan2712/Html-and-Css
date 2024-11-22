@@ -406,7 +406,7 @@ console.log(final)
 */
 
 
-
+them
 
 /*****************Object******************/
 /*
@@ -590,8 +590,109 @@ console.log(maxNum(arr))
 */
 
 
+/******* Is NaN() && Number.isNaN() *****/
+/*
+console.log(isNaN('50'))   // false
+console.log(isNaN(50))   //false
+console.log(isNaN('hello'))  // true
+
+console.log(Number.isNaN('hello'))  //false
+console.log(Number.isNaN('hello'/10)) //false
+
+console.log(parseInt('100 Ali')) //100
+console.log(+('100 Ali')) // NaN
+console.log(Number('100 Ali')) // NaN 
+console.log(parseInt('Ali 100 Ali')) //NaN
+*/
+
+
+/******* Sum Digit Numbers **************/
+/*
+function sumDigit(nums) {
+  x =nums.toString();
+  sum = 0
+  for (var i = 0; i < x.length; i++) {
+    
+    sum += (Number(x[i]))
+  }
+  return sum;
+}
+console.log(sumDigit(123456))
+*/
+
+/******* Rotate an array 1 pos to left*****/
+/*let arr = [1, 2, 3, 4, 5];
+x=arr.shift()
+arr.push(x)
+console.log(arr)
+*/
+/***** Rotate an array 1 pos to right*****/
+/*let arr1 = [1, 2, 3, 4, 5];
+x1 = arr1.pop()
+arr1.unshift(x1)
+console.log(arr1)
+*/
+
+
+/************** Revers Array *************/
+/*
+let arr = ['ali', 'Hassan', 1, 2, 3]; //revers array
+let str = 'AliHassanAmerAbuSafiah'
+ // revers String
+ 
+function revers(arr) {
+  for (var i = arr.length-1; i >= 0; i--) {
+    console.log(arr[i])
+  }
+}
+
+revers(arr)
+revers(str)
+*/
+/************** Mearge Array *************/
+/*
+let arr1 = [1, 2, 3, 4, 5]
+let arr2 = ['a', 'b', 'c']
+let newarr = []
+
+function meage(arr1, arr2) {
+  for (var i = 0; i < arr1.length; i++) {
+    newarr.push(arr1[i])
+  }
+  for (var j = 0; j < arr2.length; j++) {
+    newarr.push(arr2[j])
+  }
+  return newarr
+}
+
+console.log(meage(arr1, arr2))
+*/
 
 
 
 
 /*******تم بحمد الله الانتهاء من اساسيات الجافا سكريبت ....نكمل في المتقدم */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********Advance Java Script *************/
+/************** DOM ***************** *****/
