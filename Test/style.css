@@ -498,13 +498,14 @@ table thead th {
 /*************** loaders Move *************/
 
 
-.looading{
+.looading {
   width: fit-content;
   padding: 10px;
   margin: 400px auto;
   position: relative;
 }
-.looading span{
+
+.looading span {
   letter-spacing: 3px;
   color: #fff;
   font-size: 40px;
@@ -513,7 +514,7 @@ table thead th {
   mix-blend-mode: difference;
 }
 
-.looading::before{
+.looading::before {
   content: "";
   position: absolute;
   width: 40px;
@@ -524,18 +525,19 @@ table thead th {
   background: #fff;
 }
 
-@keyframes move{
-  from{
+@keyframes move {
+  from {
     left: 0px;
   }
-  to{
-   /* transform: translateX(200px);*/
+
+  to {
+    /* transform: translateX(200px);*/
     left: calc(100% - 40px);
   }
 }
 
 /***************Mix Css *************/
-h4{
+h4 {
   font: 40px san;
   font-weight: bold;
   padding: 20px;
@@ -544,41 +546,42 @@ h4{
   width: fit-content;
   margin: 50px auto;
   position: relative;
- transition: all 1s ;
- color: #BEA9A9;
+  transition: all 1s;
+  color: #BEA9A9;
 }
 
-h4:hover{
+h4:hover {
   transition-delay: 2s;
   color: #fff;
   border-color: #5AD74F;
   box-shadow: 1px 1px 1px 5px #C1CFC0;
 }
+
 /***********before****/
-h4:before{
+h4:before {
   content: "";
   position: absolute;
   width: 30px;
   height: 30px;
   background: red;
-  border-radius:50% ;
+  border-radius: 50%;
   left: -100px;
   top: 50%;
   transform: translateY(-50%);
   z-index: -1;
 }
 
-h4:hover::before{
+h4:hover::before {
   animation: move-right 2s forwards;
 }
 
-@keyframes move-right{
-  50%{
-    left:0%;
+@keyframes move-right {
+  50% {
+    left: 0%;
     border-radius: 0px;
   }
-  
-  100%{
+
+  100% {
     left: 0%;
     width: 50%;
     height: 100%;

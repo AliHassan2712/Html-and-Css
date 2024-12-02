@@ -406,8 +406,6 @@ console.log(final)
 */
 
 
-them
-
 /*****************Object******************/
 /*
 //1- Create Obj
@@ -492,6 +490,41 @@ finalObj.testprop = 'test'  // اضافة وتحديث
 console.log(finalObj)
 */
 
+
+
+// Advance to obj in js Ues to React 
+/*
+let user = {
+  name :'ali',
+  jobs :['prog','eng'],
+  address:{
+    street :'Omar AlMokhtar',
+    number : '2019'
+  }
+}
+
+let copyObject = user;  // هان صار ياشر عليه
+//يعني اذا صار تعديل راح يعدل 
+//Refrence 
+copyObject.name ='Hassan'
+console.log(user.name)  //Hassan
+
+let mycopyObj = {...user}  // هان هينسخ المحتوي فقط
+// اي تعديل مش هيعدل ع الاصل 
+mycopyObj.name = 'Amer'
+console.log(mycopyObj)  //name ='Amer '
+console.log(user.name)  // name = 'Hassan'
+
+let newObj = {user}  //user : user 
+newObj.name = 'test'
+// صارت زي هيك
+newObj= {
+  user:user ,   // نفسه الاصل
+  name : 'test'
+}
+console.log(user.name)
+console.log(newObj.name)
+*/
 /*******************************************/
 /********* Problem Solving in JS ***********/
 
@@ -681,18 +714,661 @@ console.log(meage(arr1, arr2))
 
 
 
+/**********Advance Java Script ********/
 
-
-
-
-
-
-
-
-
-
-
-
-
-/**********Advance Java Script *************/
 /************** DOM ***************** *****/
+/* Access to Element */
+/*document.getElementById('but')
+document.getElementsByTagName('button')
+document.getElementsByClassName('test')
+document.querySelector('.but')
+document.querySelectorAll('#but') // Array
+
+document.tittle
+document.body
+document.forms[0].one.value
+document.images[1].scr
+document.links[2].href
+*/
+
+/* Content in Js */
+/*
+let myEle = document.querySelector('.js');
+myEle.innerHTML = 'Text from <span>Js</span> File'   // not enclode html tag  sa html
+
+myEle.textContent = 'Text from <span>Js</span> File'  // encloude html tag  as text
+*/
+
+
+/* Get &&  Set Atteubits */
+/*
+let myEle = document.querySelector('.js');
+myEle.setAttribute('data','test-data')
+console.log(myEle)
+console.log(myEle.getAttribute('class'))
+*/
+
+/* Check Atteubits */
+/*
+let myEle = document.querySelector('.js');
+console.log(myEle.attributes)
+console.log(myEle.hasAttribute('class'))
+console.log(myEle.hasAttributes())
+myEle.removeAttribute('class')
+console.log(myEle)
+*/
+
+/* Childern`s */
+/*
+childern 
+childern[]     //  فقط html tags
+childernNode()   // لكل اشي comment text html
+
+// هدول خاص في html tag فقط
+firstElementChild
+lastElementChild
+
+// هدول لكل اشي سواء text comment html tag ..
+firstChild
+lastChild
+*/
+
+
+
+/* Create Element &&  Append Child */
+/*
+for (var i = 0; i <= 3; i++) {
+  let myDiv = document.createElement('div')
+  let myTittle = document.createElement('h3')
+  let myP = document.createElement('p')
+
+  let myTittleText = document.createTextNode('AliHassan')
+
+  let myPText = document.createTextNode('AliHassanAmerAbusafiah')
+
+  let myAttr = document.createAttribute('data-custom')
+
+  let myComment = document.createComment('Test Comment')
+
+  myDiv.className = 'Product'
+  myDiv.setAttribute('class', 'test-class')
+
+
+  myDiv.appendChild(myComment)
+
+  myTittle.appendChild(myTittleText)
+  myDiv.appendChild(myTittle)
+
+  myP.appendChild(myPText)
+  myDiv.appendChild(myP)
+
+  document.body.append(myDiv)
+  console.log(myDiv)
+}
+*/
+
+/*********** Events ***************/
+/*
+//mouse
+ele.onclick
+.oncontentmenu
+.onmouseleve
+.onmouseenter
+
+//window
+window.onscroll
+window.onresize
+
+//form
+input.onfoucs
+.onblur
+.onsubmit  //validations
+*/
+
+/// لسا في غيرهم كثير 
+/*
+let username = document.querySelector('#username')
+
+let password = document.querySelector('#password')
+
+document.forms[0].onsubmit = function(e) {
+  let userValid = false
+  let passValid = false
+
+  if (username.value !== '' && username.vale.lenght >= 8) {
+    userValid = true
+  }
+
+  if (password.value !== '' && passValid.vale.lenght >= 8) {
+    userValid = true
+  }
+
+
+  if (userValid === false || passValid === false) {
+    e.preventDefult()
+  }
+}
+*/
+
+/*********** Class List ***/
+/*
+let ele = document.querySelector('.test')
+console.log(ele.classList)
+ele.classList.length
+ele.classList.contains
+ele.classList.item
+
+// ممكن اضيف واحذف اكثر من class في نفس الوقت 
+ele.classList.add('',' ','')
+ele.classList.remove('','')
+ele.classList.toggle('')  // and &&  remove at same time 
+*/
+
+/********* Css Style ****/
+/*
+let ele = document.querySelector('.test')
+ele.style.color = 'red'   //kamalCase
+ele.style.cssText = ("font-size : 40px ; color : green")  // اكثر من prop
+ele.style.setProperty('','' ,هان بحط important )
+ele.style.removeProperty('')
+*/
+/*
+console.log(document.styleSheets[0].rules[0].style
+)
+*/
+
+
+
+
+/**** Deal With Element ***/
+/*
+befor
+after
+prpend
+append
+remove   // حذف العنصر نهائيا من الdoc
+// بتفرق عن display none 
+// انو المستخدم ممكن يفتح inspctet ويشيل الnone ويشوف العنثصر 
+// اما remove بقدرش لانو مش موجود 
+*/
+
+
+
+/************ Siblings (Trqvrsing) *****/
+/*
+nextSibling   // اي عنصر text comment html
+nextElementSibling    // فقط html
+ // الprevius زيهن الي فوق
+previousElemnetSibling
+prevoiusElemnet
+
+parentElemnet   // الاب 
+*/
+
+
+/********* Clone Node (deep) ********/
+/*
+let myP = document.querySelector('p').cloneNode(true)
+
+//لازم اغيرالها الid 
+//عشان تفرق عن الاصل 
+let myDiv = document.querySelector('div')
+myDiv.appendChild(myP)
+document.body.appendChild(myDiv)
+*/
+
+/********* Event Listner ********/
+/*
+onclick ع سبيل المثال لو استخدمها مرتين لنفس الele
+راح تعمل override علي الي قبل
+
+طب كيف بدي اضيف اكثر من event على الele
+هان بيجي دور addEventListener
+*/
+
+
+/*
+let myP = document.querySelector('p')
+
+
+myP.addEventListener('click',function (e) {
+  console.log('one event')
+})
+
+myP.addEventListener('click', function(e) {
+  console.log('two event')
+})
+
+myP.onclick = function (e) {
+console.log('event one ')  
+}
+
+myP.onclick = function(e) {
+  console.log('event two ')
+}
+
+function eventThree() {
+  console.log('event three')
+}
+
+myP.addEventListener('click',function (e) {
+  eventThree()
+})
+*/
+
+// من اعظم استخدمات الadd lisner event
+// هو اضافة event ل ele
+// لم يتم انشاؤه بعد 
+// onclick راح يطلع ايرور لو استخدمها لعنصر لسا ما انشئ
+
+
+/*
+let myP = document.querySelector('p')
+myP.onclick = function(e) {
+  let newP = myP.cloneNode(true)
+  newP.className = 'clone'
+  document.body.appendChild(newP)
+}
+
+*/
+
+
+// Error for use onclick
+/*
+let cloned = document.querySelector('.clone')
+cloned.onclick =function (e) {
+  console.log('iam cloned')
+}
+*/
+
+
+// This is correct Way
+/*
+document.addEventListener('click', function(e) {
+  if (e.target.className === 'clone') {
+    console.log('iam clone')
+  }
+})
+*/
+
+
+
+/************** BOM ***************** *****/
+/******Stop Watch simple ****/
+/*
+let hour = document.querySelector('.hour')
+let min = document.querySelector('.min')
+let sec = document.querySelector('.sec')
+let msec = document.querySelector('.msec')
+let but = document.querySelector('button')
+let count =setInterval(function() {
+  msec.innerHTML -= 1
+  if (msec.innerHTML == -60) {
+    sec.innerHTML -= 1
+    msec.innerHTML = 0
+  }
+  if (sec.innerHTML == -60) {
+    min.innerHTML -= 1;
+    sec.innerHTML = 0;
+    if (min.innerHTML == -60) {
+      hour.innerHTML -= 1;
+      min.innerHTML = 0
+    }
+  }
+}, 1)
+
+but.addEventListener ('click',function () {
+  clearInterval(count)
+  but.textContent = 'reset'
+  
+  but.addEventListener('click',function () {
+  if (but.textContent = 'reset') {
+    hour.innerHTML = 0
+    min.innerHTML = 0
+    sec.innerHTML = 0
+    msec.innerHTML = 0
+  }
+})
+
+})
+*/
+
+/******** Local Storge Challange ****/
+/*
+let lis = document.querySelectorAll('ul li')
+let exp = document.querySelector('.exp')
+
+if (window.localStorage.getItem('color')) {
+  exp.style.backgroundColor = window.localStorage.getItem('color')
+  
+  lis.forEach((li)=> {
+    li.classList.remove('active')
+  })
+  
+  document.querySelector(`[data-color ="${window.localStorage.getItem('color')}"]`).classList.add('active')
+
+}
+
+
+lis.forEach((li) => {
+  li.addEventListener('click', function(e) {
+    // console.log(e.currentTarget.dataset.color)
+
+    lis.forEach((li) => {
+      li.classList.remove('active')
+    })
+
+    e.currentTarget.classList.add('active')
+
+    window.localStorage.setItem('color',e.currentTarget.dataset.color)
+
+   exp.style.backgroundColor = window.localStorage.getItem('color')
+    
+  })
+})
+*/
+
+/********** Dark && light Mode ****/
+//في كرق كثير هادي طريقتي الخاصة
+/*
+let but = document.querySelector('button')
+if (window.localStorage.getItem('theam') === 'dark') {
+  document.body.style.backgroundColor = '#333'
+  but.textContent = 'light'
+}
+
+if (window.localStorage.getItem('theam') === 'light') {
+  document.body.style.backgroundColor = '#fff'
+  but.textContent = 'dark'
+}
+
+but.addEventListener('click', () => {
+  if (localStorage.getItem('theam') !== 'dark') {
+    localStorage.setItem('theam', 'dark');
+    document.body.style.backgroundColor = '#333'
+    but.textContent = 'light'
+  }
+  else {
+    localStorage.setItem('theam', 'light');
+    document.body.style.backgroundColor = '#fff'
+    but.textContent = 'dark'
+  }
+})
+*/
+
+
+/********** To Do List ***********/
+/*
+// Select DOM elements
+let taskInput = document.querySelector('.input')
+let addTaskButton = document.querySelector('.add')
+let taskList = document.querySelector('.tasks')
+
+
+// Load tasks from localStorage
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+// Function to render tasks
+function renderTasks() {
+    .innerHTML = '';
+    tasks.forEach((task, index) => {
+        const li = document.createElement('li');
+        li.style.cssText="display: flex;align-items: center;justify-content: space-between;margin-top:20px;"
+        li.innerHTML = `
+            <span>${task}</span>
+            <button style="background: red;padding: 5px;color: white;border: none;outline: none;border-radius: 5px;
+            " onclick="deleteTask(${index})">Delete</button>
+        `;
+        taskList.appendChild(li);
+    });
+}
+
+// Function to add a task
+function addTask() {
+    const task = taskInput.value.trim();
+    if (task) {
+        tasks.push(task);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+        taskInput.value = '';
+        renderTasks();
+    }
+}
+
+// Function to delete a task
+function deleteTask(index) {
+    tasks.splice(index, 1);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    renderTasks();
+}
+
+// Event listeners
+addTaskButton.addEventListener('click', addTask);
+
+
+// Initial rendering
+renderTasks();
+ */
+
+
+
+/***************To Do List 2 *********/
+/*
+let input = document.querySelector('.input');
+let btnAdd = document.querySelector('.add'); // Consistent naming for clarity
+let tasks = document.querySelector('.tasks');
+
+let arrayOfTasks = [];
+
+// Check localStorage and initialize tasks array
+if (localStorage.getItem('tasks')) {
+  arrayOfTasks = JSON.parse(localStorage.getItem('tasks'));
+}
+
+getFromLocalStorage();
+
+// Event listener for adding a task
+btnAdd.addEventListener('click', (e) => {
+  if (input.value === '') {
+    e.preventDefault();
+    alert('Please enter a task!');
+    return;
+  }
+  addTaskToArray(input.value);
+  input.value = ''; // Clear input after adding
+});
+
+// Function to add a task to the array
+function addTaskToArray(taskText) {
+  let task = {
+    id: Date.now(), // Unique ID for each task
+    title: taskText,
+  };
+  arrayOfTasks.push(task);
+
+  addToPage(arrayOfTasks); // Update the page
+  addToLocalStorage(arrayOfTasks); // Save to localStorage
+}
+
+// Function to display tasks on the page
+function addToPage(allTasks) {
+  tasks.innerHTML = ''; // Clear the current task list to avoid duplicates
+
+  allTasks.forEach((task) => {
+    let div = document.createElement('div');
+    div.className = 'task';
+    div.setAttribute('data-id', task.id); // Assign ID to the task container
+    div.style.cssText = 'display:flex;align-items:center;justify-content:space-between'
+    let p = document.createElement('p');
+    p.textContent = task.title;
+
+    let butDel = document.createElement('button');
+    butDel.textContent = 'Delete';
+    
+    butDel.style.cssText ='background: red;padding: 5px;color: white;border: none;outline: none;border-radius: 5px;'
+    // Append elements to the task container
+    div.appendChild(p);
+    div.appendChild(butDel);
+    tasks.appendChild(div);
+
+    // Add delete functionality
+    butDel.addEventListener('click', () => {
+      deleteTask(task.id);
+    });
+  });
+}
+
+// Function to save tasks to localStorage
+function addToLocalStorage(allTasks) {
+  window.localStorage.setItem('tasks', JSON.stringify(allTasks));
+}
+
+// Function to retrieve tasks from localStorage
+function getFromLocalStorage() {
+  let data = localStorage.getItem('tasks');
+  if (data) {
+    arrayOfTasks = JSON.parse(data);
+    addToPage(arrayOfTasks); // Display tasks on page load
+  }
+}
+
+// Function to delete a task
+function deleteTask(taskId) {
+  // Remove task from the array
+  arrayOfTasks = arrayOfTasks.filter((task) => task.id !== taskId);
+
+  // Update the page and localStorage
+  addToPage(arrayOfTasks);
+  addToLocalStorage(arrayOfTasks);
+}
+*/
+
+
+
+/*****************Tabs *******/
+/*
+let tabs = document.querySelectorAll('ul li')
+let content = document.querySelectorAll('.content div')
+
+
+tabs.forEach((ele) => {
+  ele.addEventListener('click', (e) => {
+    tabs.forEach((e) => {
+      e.classList.remove('active')
+    })
+    e.currentTarget.classList.add('active')
+    content.forEach((ele) => {
+      ele.style.display = 'none'
+    })
+    document.querySelector(e.currentTarget.dataset.cont).style.display = 'block'
+
+  })
+
+})
+
+*/
+
+
+
+
+/****************Increscing Width ********/
+/*
+let spans = document.querySelectorAll('div span')
+window.onload = (e) => {
+  spans.forEach((span) => {
+    span.style.width = span.dataset.width
+  })
+
+}
+*/
+
+
+/**************Incresing Counter Num **/
+/*
+let section = document.querySelector('.incCount')
+let nums = document.querySelectorAll('.incCount div')
+let started = false
+
+window.onscroll = () => {
+  if (window.scrollY >= section.offsetTop - 200) {
+
+    if (!started) {
+      nums.forEach((el) => {
+        let count = setInterval(() => {
+          el.textContent++;
+          if (el.textContent == el.dataset.goal) {
+            clearInterval(count)
+          }
+        }, 2000 / el.dataset.goal)
+      })
+    }
+    started = true
+  }
+}
+*/
+
+
+/***************Works Tabs***********/
+/*
+let lis = document.querySelectorAll('ul li')
+let allcat = document.querySelectorAll('.content div')
+
+
+lis.forEach((ele) => {
+  ele.addEventListener('click', (e) => {
+    lis.forEach((ele) => {
+      ele.classList.remove('active')
+    })
+    e.currentTarget.classList.add('active')
+    allcat.forEach((ele) => {
+      ele.style.display = 'none'
+    })
+    document.querySelectorAll(ele.dataset.cont).forEach((ele)=> {
+      ele.style.display = 'block'
+    })
+  })
+
+})
+*/
+
+
+/***************Genarate Serial Nums*****/
+/*
+let serial = document.querySelector('.serial')
+
+let gena = document.querySelector('.genarate')
+
+gena.addEventListener('click', (e) => {
+  let char = 'ABCDEFabcdef123456@#$&'
+  let charCount = 8;
+  let random = ''
+
+  for (var i = 0; i < charCount; i++) {
+    random += char[Math.floor(Math.random() * char.length)];
+  }
+
+
+  serial.textContent = random
+})
+*/
+
+/***************Input Charater,s*******/
+/*
+let input = document.querySelector('.input input')
+let prog = document.querySelector('span')
+let zeroNum = document.querySelector('.zeroNum')
+
+let maxLen = input.getAttribute('maxlength')
+
+zeroNum.textContent = maxLen
+
+input.oninput = () => {
+  zeroNum.textContent = maxLen - input.value.length
+  if (zeroNum.textContent == 0) {
+    zeroNum.classList.add('zero')
+  } else {
+    zeroNum.classList.remove('zero')
+  }
+
+  prog.style.width = `${((input.value.length *100) / maxLen)}%`
+}
+*/
