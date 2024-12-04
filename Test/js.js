@@ -1372,3 +1372,100 @@ input.oninput = () => {
   prog.style.width = `${((input.value.length *100) / maxLen)}%`
 }
 */
+
+
+
+
+/*****Advance Form Validation ***********/
+
+/*
+let username = document.querySelector('#username')
+
+let password = document.querySelector('#password')
+
+let email = document.querySelector('#email')
+let but = document.querySelector('button')
+let lis1 = document.querySelectorAll("#password + ul li")
+let lis2 = document.querySelectorAll("#email + ul li")
+
+
+
+
+but.addEventListener('click', (e) => {
+  if (username.value == '' || password.value == '' || email.value == '') {
+    e.preventDefault()
+  }
+})
+
+
+
+// PassWord 
+password.oninput = (e) => {
+  lis1.forEach((ele) => {
+    ele.style.display = 'block'
+  })
+  if (password.value.includes('A')) {
+    lis1[0].style.color = 'black'
+  } else {
+    lis1[0].style.color = 'red'
+  }
+  if (password.value.includes('a')) {
+    lis1[1].style.color = 'black'
+  } else {
+    lis1[1].style.color = 'red'
+  }
+
+  if (password.value.includes('1')) {
+    lis1[2].style.color = 'black'
+  } else {
+    lis1[2].style.color = 'red'
+  }
+
+
+  if (password.value.includes('@')) {
+    lis1[3].style.color = 'black'
+
+
+  } else {
+    lis1[3].style.color = 'red'
+  }
+  
+}
+
+
+password.onblur = (e) => {
+  if (password.value == '') {
+    lis1.forEach((ele) => {
+      ele.style.display = 'none'
+    })
+  }
+}
+
+
+
+
+//Email
+email.oninput = (e) => {
+  lis2.forEach((ele) => {
+    ele.style.display = 'block'
+  })
+
+  if (email.value.includes('@gmail')) {
+    lis2[0].style.color = 'black'
+    emailValid = true;
+
+  } else {
+    lis2[0].style.color = 'red'
+  }
+}
+
+email.onblur = (e) => {
+  if (email.value == '') {
+    lis2.forEach((ele) => {
+      ele.style.display = 'none'
+    })
+  }
+}
+
+*/
+
