@@ -1678,23 +1678,3 @@ check();
 */
 
 
-let age = 10;
-if (age >=  20){
-  console.log('Younger')
-}
-else if (21 <= age <=  59 ) {
-  console.log('Not Younger')
-}
-else{
-  console.log('Other')
-}
-
-
-age>= 20  ? console.log('Younger') :21 <= age <=  59  ? console.log('Not Younger')
- : console.log('Other')
- 
- 
- 
- switch(age){
-   case age <= 20
- }
