@@ -1469,3 +1469,232 @@ email.onblur = (e) => {
 
 */
 
+
+
+/***************Slider Image *********/
+/*
+let imgs = document.querySelectorAll('img')
+let bullets = document.querySelector('ul')
+let pervBut = document.querySelector('.prev')
+let nextBut = document.querySelector('.next')
+
+let currentSlide = 1
+let numbersSlide = imgs.length
+
+
+for (var i = 1; i <= numbersSlide; i++) {
+  var li = document.createElement('li')
+  li.setAttribute('data-index', i)
+  li.appendChild(document.createTextNode(i))
+  bullets.appendChild(li)
+}
+
+
+
+nextBut.onclick = next
+pervBut.onclick = prev
+
+
+
+function check() {
+  document.querySelector('span').textContent = `Image ${currentSlide} from${numbersSlide} Images`
+  removeActiveLi()
+  removeActiveImg()
+
+  if (currentSlide == numbersSlide) {
+    nextBut.classList.add('disabled')
+  }
+  else {
+    nextBut.classList.remove('disabled')
+  }
+
+  if (currentSlide == 1) {
+    pervBut.classList.add('disabled')
+  }
+  else {
+    pervBut.classList.remove('disabled')
+  }
+  
+  if (nextBut.classList.contains('disabled')) {
+    return false
+  }
+}
+check()
+
+
+
+function removeActiveImg() {
+  imgs.forEach((img) => {
+    img.classList.remove('active')
+  })
+  imgs[currentSlide - 1].classList.add('active')
+}
+
+
+
+function removeActiveLi() {
+  let lis = document.querySelectorAll('ul li')
+  lis.forEach((li) => {
+    li.classList.remove('active')
+  })
+  lis[currentSlide - 1].classList.add('active')
+}
+
+
+
+function next() {
+    currentSlide++
+    check()
+
+}
+
+
+
+function prev() {
+  currentSlide--
+  check()
+}
+
+
+setInterval(() => {
+  currentSlide++
+  check()
+  if (currentSlide == numbersSlide) {
+    nextBut.classList.add('disabled')
+    currentSlide = 0
+  }
+  else {
+    nextBut.classList.remove('disabled')
+  }
+
+}, 1000)
+
+
+
+let allLis = document.querySelectorAll('ul li')
+
+allLis.forEach((li) => {
+  li.addEventListener('click', (e) => {
+    allLis.forEach((li) => {
+      li.classList.remove('active')
+    })
+    e.currentTarget.classList.add('active')
+    currentSlide = e.currentTarget.dataset.index;
+    check()
+  })
+})
+*/
+
+
+
+/*
+let imgs = document.querySelectorAll('img');
+let bullets = document.querySelector('ul');
+let prevBut = document.querySelector('.prev');
+let nextBut = document.querySelector('.next');
+let currentSlide = 1;
+let numbersSlide = imgs.length;
+
+// Create bullets dynamically
+for (let i = 1; i <= numbersSlide; i++) {
+  let li = document.createElement('li');
+  li.setAttribute('data-index', i);
+  li.textContent = i;
+  bullets.appendChild(li);
+}
+
+// Add event listeners
+nextBut.addEventListener('click', next);
+prevBut.addEventListener('click', prev);
+
+// Autoplay functionality
+let autoplay = setInterval(() => {
+  if (currentSlide === numbersSlide) {
+    currentSlide = 1; // Loop back to the first slide
+  } else {
+    currentSlide++;
+  }
+  check();
+}, 5000);
+
+// Check current state and update UI
+function check() {
+  document.querySelector('span').textContent = `Image ${currentSlide} of ${numbersSlide} Images`;
+  updateActiveClasses();
+  toggleButtons();
+}
+
+// Update active image and bullet
+function updateActiveClasses() {
+  imgs.forEach((img, index) => {
+    img.classList.toggle('active', index === currentSlide - 1);
+  });
+
+  let lis = document.querySelectorAll('ul li');
+  lis.forEach((li, index) => {
+    li.classList.toggle('active', index === currentSlide - 1);
+  });
+}
+
+// Enable/Disable buttons based on current slide
+function toggleButtons() {
+  prevBut.classList.toggle('disabled', currentSlide === 1);
+  nextBut.classList.toggle('disabled', currentSlide === numbersSlide);
+}
+
+// Move to the next slide
+function next() {
+  if (currentSlide < numbersSlide) {
+    currentSlide++;
+    check();
+  }
+}
+
+// Move to the previous slide
+function prev() {
+  if (currentSlide > 1) {
+    currentSlide--;
+    check();
+  }
+}
+
+// Add click event listeners to bullets
+document.querySelectorAll('ul li').forEach((li) => {
+  li.addEventListener('click', (e) => {
+    currentSlide = parseInt(e.currentTarget.dataset.index, 10);
+    check();
+  });
+});
+
+// Initialize the slider
+check();
+
+*/
+
+/*fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => response.json())
+      .then(json => console.log(json))
+
+*/
+
+
+let age = 10;
+if (age >=  20){
+  console.log('Younger')
+}
+else if (21 <= age <=  59 ) {
+  console.log('Not Younger')
+}
+else{
+  console.log('Other')
+}
+
+
+age>= 20  ? console.log('Younger') :21 <= age <=  59  ? console.log('Not Younger')
+ : console.log('Other')
+ 
+ 
+ 
+ switch(age){
+   case age <= 20
+ }
