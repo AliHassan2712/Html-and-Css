@@ -1677,4 +1677,278 @@ check();
 
 */
 
+/*
+
+let inputs = document.querySelectorAll('input')
+let curInput = 0
+
+
+function otpinput() {
+  inputs.forEach((ele) => {
+    ele.setAttribute('disabled', 'disabled')
+    inputs[curInput].removeAttribute('disabled')
+    inputs[curInput].style.cssText = 'border:2px solid #263B33;'
+  })
+
+
+
+  inputs.forEach((ele) => {
+    ele.onkeyup = ((ele) => {
+      if (inputs[curInput].value.length == 1) {
+        inputs[curInput].style.cssText = 'border:none; background:#333;color:white;'
+        curInput++
+        if (curInput == inputs.length) {
+          curInput--
+        }
+        otpinput()
+      }
+
+
+      else {
+        inputs[curInput].removeAttribute('disabled')
+        inputs[curInput].style.cssText = 'border:none,'
+        curInput--
+        if (curInput < 0 || curInput > inputs.length) {
+          curInput = 0
+        }
+        inputs[curInput].removeAttribute('disabled')
+        otpinput()
+      }
+
+
+      if (inputs[curInput].value.length > 1) {
+        let inp = inputs[0].value.split('')
+        for (var i = 0; i < inputs.length; i++) {
+          inputs[curInput].value = inp[i]
+          curInput++
+          otpinput()
+        }
+      }
+    })
+  })
+
+}
+otpinput()
+
+*/
+/*
+let inputs = document.querySelectorAll('input');
+let curInput = 0;
+
+function otpinput() {
+  // Disable all inputs initially
+  inputs.forEach((ele, index) => {
+    ele.disabled = index !== curInput;
+    ele.style.cssText = index === curInput ? 'border: 2px solid #263B33;' : 'border: none; background: #333; color: white;';
+  });
+
+  // Attach keyup event listeners to each input
+  inputs.forEach((ele, index) => {
+    ele.onkeyup = (event) => {
+      const value = event.target.value;
+
+      if (value.length === 1) {
+        // Move to the next input if it exists
+        if (index < inputs.length - 1) {
+          curInput++;
+        }
+      } else if (event.key === 'Backspace' && value.length === 0) {
+        // Move to the previous input if backspace is pressed
+        if (index > 0) {
+          curInput--;
+        }
+      }
+
+      // Update input focus
+      otpinput();
+      inputs[curInput].focus();
+    };
+  });
+}
+
+// Initialize the OTP input handler
+otpinput();
+*/
+
+
+
+
+
+
+let drop = document.querySelector('.parant-menu')
+let menu = document.querySelector('.menu')
+drop.addEventListener('click', () => {
+  menu.style.display == 'block' ? menu.style.display = 'none' : menu.style.display = 'block';
+})
+
+
+let hamb = document.querySelector('.hamb')
+let links = document.querySelector('.links')
+
+
+hamb.addEventListener('click', () => {
+  links.style.display == 'block' ? links.style.display = 'none' : links.style.display = 'block'
+})
+
+hamb.addEventListener('click', () => {
+  let one = document.querySelector('.one')
+  let two = document.querySelector('.two')
+  let three = document.querySelector('.three')
+  two.style.display == 'none' ? two.style.display = 'block' : two.style.display = 'none'
+  one.classList.toggle('rotateOne')
+  three.classList.toggle('rotatethree')
+
+})
+
+let dark = document.querySelector('.dark')
+let nav = document.querySelector('nav')
+
+
+if (localStorage.getItem('theme') == 'dark') {
+  nav.style.backgroundColor = '#444'
+}
+
+
+dark.addEventListener('click', () => {
+  nav.classList.toggle('darkMode')
+  if (localStorage.getItem('theme') !== 'dark') {
+    nav.style.backgroundColor = '#444'
+    localStorage.setItem('theme', 'dark')
+  }
+  else {
+    nav.style.backgroundColor = 'transparent'
+    localStorage.removeItem('theme')
+  }
+
+})
+
+
+let but = document.querySelector('.up')
+but.style.display = 'none'
+
+
+window.onscroll = () => {
+  if (window.scrollY > 200) {
+    but.style.display = 'block'
+  } else {
+    but.style.display = 'none'
+  }
+}
+
+but.addEventListener('click', () => {
+  window.scrollTo({
+    left: 0,
+    top: 0,
+    behavior: "smooth",
+  })
+})
+
+
+/*
+if (window.localStorage.getItem('color')) {
+  document.body.style.backgroundColor =window.localStorage.getItem('color')
+  
+ document.querySelector(`[data-color = "${window.localStorage.getItem('color')}"]`).classList.add('active')
+ 
+}
+
+
+let licolor = document.querySelectorAll('.colors ul li')
+
+licolor.forEach((ele) => {
+  ele.addEventListener('click', (ele) => {
+    licolor.forEach((ele) => {
+      ele.classList.remove('active')
+    })
+    ele.currentTarget.classList.add('active')
+    document.body.style.backgroundColor = ele.currentTarget.dataset.color
+    localStorage.setItem('color',ele.currentTarget.dataset.color)
+    
+    
+    but.style.color = window.localStorage.getItem('color')
+  })
+}) 
+
+*/
+
+
+let lis = document.querySelectorAll('.colors ul li')
+
+
+if (window.localStorage.getItem('color')) {
+  document.body.style.backgroundColor = window.localStorage.getItem('color')
+
+  document.querySelector(`[data-color = "${window.localStorage.getItem('color')}"]`).classList.add('active')
+
+  but.style.color = window.localStorage.getItem('color')
+
+}
+lis.forEach((ele) => {
+  ele.addEventListener('click', (ele) => {
+    lis.forEach((ele) => {
+      ele.classList.remove('active')
+    })
+    ele.currentTarget.classList.add('active')
+    document.body.style.backgroundColor = ele.currentTarget.dataset.color
+    localStorage.setItem('color', ele.currentTarget.dataset.color)
+
+    but.style.color = window.localStorage.getItem('color')
+
+    divTime.style.color = localStorage.getItem('color')
+  })
+})
+
+
+var divTime = document.querySelector('.clockTime')
+divTime.style.color = localStorage.getItem('color')
+
+
+
+let hours = new Date().getHours().toString()
+let minuts = new Date().getMinutes().toString()
+let seconds = new Date().getSeconds().toString()
+let allDivTime = document.querySelectorAll('.clock .clockTime div')
+
+allDivTime[5].innerHTML = seconds[1] ?? '0'
+allDivTime[4].innerHTML = seconds[0] ?? '0'
+
+allDivTime[3].innerHTML = minuts[0] ?? '0'
+allDivTime[2].innerHTML = minuts[1] ?? '0'
+
+allDivTime[1].innerHTML = hours[1] ?? '0'
+allDivTime[0].innerHTML = hours[0] ?? '0'
+
+setInterval(()=> {
+  allDivTime[5].innerHTML++
+  if (allDivTime[5].innerHTML == 10) {
+    allDivTime[4].innerHTML++
+    allDivTime[5].innerHTML = 0
+  }
+ 
+  if (allDivTime[4].innerHTML == 6) {
+    allDivTime[3].innerHTML++
+    allDivTime[4].innerHTML = 0
+  }
+  
+  if (allDivTime[3].innerHTML == 10) {
+    allDivTime[2].innerHTML++
+    allDivTime[3].innerHTML = 0
+  }
+  
+  if (allDivTime[2].innerHTML == 6) {
+    allDivTime[1].innerHTML++
+    allDivTime[2].innerHTML = 0
+  }
+  
+  if (allDivTime[1].innerHTML == 4) {
+    allDivTime[0].innerHTML++
+    allDivTime[1].innerHTML = 0
+  }
+  
+  if (allDivTime[0].innerHTML == 3) {
+    allDivTime[1].innerHTML = 0
+    allDivTime[0].innerHTML = 0
+  }
+  
+},1000)
 

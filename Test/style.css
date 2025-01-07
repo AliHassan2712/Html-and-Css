@@ -620,3 +620,290 @@ h4:hover::after {
     border-radius: 0px
   }
 }
+
+
+
+
+/*****************/
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  height: 2500px;
+  transition: all .5s;
+}
+
+
+/*****************/
+
+nav {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 1px 1px 1px 0px white;
+  color: #fff;
+  position: sticky;
+  top: 0.1px;
+  width: 100%;
+  transition: all .5s
+}
+
+
+nav ul {
+  list-style: none;
+  color: #fff;
+}
+
+nav ul.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul.menu .parant-menu {
+  position: relative;
+}
+
+nav ul.menu {
+  display: none;
+  position: absolute;
+  background: transparent;
+  color: white;
+  padding: 3px;
+  top: 45px;
+  width: 80px;
+  overflow: hidden;
+  transition: all .5s;
+  border-radius: 8px;
+  background: #42445A;
+}
+
+nav ul.menu li {
+  padding: 3px;
+  margin-top: 5px;
+}
+
+nav ul.menu li:last-child {
+  border-top: 1px solid white
+}
+
+nav ul.links li {
+  margin-left: 10px
+}
+
+.darkMode{
+  background: #222;
+}
+.hamb {
+  border: 1px solid white;
+  width: 40px;
+  height: 40px;
+  padding: 3px;
+  display: none;
+  position: relative;
+}
+
+.hamb span {
+  transition: all .5s;
+  display: block;
+  width: 80%;
+  height: 3px;
+  background: white;
+  position: absolute;
+}
+
+.hamb span.one {
+  top: 5px;
+}
+
+.hamb span.two {
+  top: 15px;
+}
+
+.hamb span.three {
+  top: 25px;
+}
+
+nav ul li.dark{
+  color:black;
+  font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  nav ul.links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 5px;
+    z-index: 1000;
+  }
+
+  nav ul.menu {
+    left: 50%;
+    top: 50%;
+    background: #42445A;
+  }
+
+  nav ul.links li {
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+
+  .hamb {
+    display: block;
+  }
+}
+
+.rotateOne {
+  transition: all .5s;
+  margin-top: 10px;
+  transform: rotate(-45deg);
+}
+
+.rotatethree {
+  transition: all .5s;
+  margin-top: -10px;
+  transform: rotate(-135deg);
+}
+
+/*****************/
+
+button {
+  padding: 15px;
+  border: none;
+  color: red;
+  font-size: 20px;
+  border-radius: 8px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translate(-50%);
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent transparent black transparent;
+}
+
+/*****************/
+
+.colors {
+  width: 50px;
+  padding: 20px;
+  background: transparent;
+  border: 1px solid white;
+  box-shadow: 0px 0px 1px 0px white;
+  position: fixed;
+  top: 40%;
+  left: -25px;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  transition: all .5s;
+  z-index: 1000;
+}
+
+.colors:hover {
+  left: 0;
+}
+
+.colors ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.colors ul li {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin: 5px;
+  border: 1px solid black;
+}
+
+.colors ul li:first-child {
+  background: #F19661;
+}
+
+.colors ul li:nth-child(2) {
+  background: #61B5F1;
+}
+
+.colors ul li:nth-child(3) {
+  background: #9CE565;
+}
+
+.colors ul li:nth-child(4) {
+  background: #65E5A7;
+}
+
+.colors ul li:nth-child(5) {
+  background: #E565C2;
+}
+
+.colors ul li.active {
+  opacity: 1;
+}
+
+.colors ul li:not(.active) {
+  opacity: .6;
+}
+
+
+.clock{
+  width: 100%;
+  height: 350px;
+  margin: auto;
+  background-image: url('../FB_IMG_1727879801275.jpg');
+  background-size:contain;
+  background-repeat: repeat;
+  position: relative;
+  z-index: -2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clock:after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #6E6E73;
+  opacity: .9;
+  z-index: -1;
+}
+
+.clockTime{
+  display: flex;
+}
+.clockTime > div {
+  background: #E1E1EA;
+  padding: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0px 7px;
+  border-radius: 8px;
+  transition: all 0.5s;
+  box-shadow: 0px 0px 0px 3px white;
+}
+
+.clockTime div:nth-child(2),
+.clockTime div:nth-child(4){
+  margin-right:20px;
+}
